@@ -1,0 +1,336 @@
+\documentclass[a4paper]{ctexart}
+
+\makeatletter
+\let\@afterindenttrue\@afterindentfalse
+\makeatother
+\setlength{\parindent}{0em}
+
+\usepackage{amsmath,amsfonts,amssymb}
+
+\title{数学物理方法\quad 期末考试}
+\author{周子正\quad 学号：1810334}
+\date{2020 年 6 月}
+\begin{document}
+\maketitle
+\section{第一题}
+\input{paper.tex}
+\section{第二题}
+
+$$
+    \begin{aligned}
+        z & =\frac{1-i\tan x}{1+i\tan x}=\frac{\cos x-i\sin x}{\cos x+i\sin x}=\frac{-i\left[ \cos \left( \pi /2-x \right) +i\sin \left( \pi /2-x \right) \right]}{\exp \left( ix \right)} \\
+          & =\exp \left( i\frac{3\pi}{2} \right) \exp \left( i\frac{\pi}{2} \right) \exp \left( -2ix \right) =\exp \left( -2ix \right)                                                     \\
+          & =\cos 2x-i\sin 2x
+    \end{aligned}
+$$
+
+
+\section{第三题}
+
+$$
+    1+i=\sqrt{2}\exp \left( i\frac{\pi}{4} \right)
+$$
+$$
+    1-i=\sqrt{2}\exp \left( -i\frac{\pi}{4} \right)
+$$
+$$
+    \left( 1+i \right) ^{1000}+\left( 1-i \right) ^{1000}=2^{500}\left[ \exp \left( 250\pi i \right) +\exp \left( -250\pi i \right) \right] =2^{501}
+$$
+
+
+\section{第四题}
+
+$$
+    \because |\sqrt{3}+i|=|\sqrt{3}-i|
+$$
+$$
+    \therefore |\sqrt{3}+i|^n=|\sqrt{3}-i|^n
+$$
+
+二者模长必然相同，若要求二者相等，只需要辐角满足
+$$
+    \text{arg}\left( \sqrt{3}+i \right) ^n=2k\pi +\text{arg}\left( \sqrt{3}-i \right) ^n,\quad k\in \mathbb{Z}
+$$
+
+$$
+    \therefore n\frac{\pi}{6}=-n\frac{\pi}{6}+2k\pi
+$$
+$$
+    \therefore n=6k,\quad k\in \mathbb{Z}
+$$
+
+所以只需要$n$是整数且能被$6$整除即可。
+
+\section{第五题}
+将$z=x+yi$代入$\omega$展开有：
+$$\omega=\frac{x^{2}+y^{2}-1}{x^{2}+(y+1)^{2}}-\frac{2 x}{x^{2}+(y+1)^{2}} i$$
+
+\section{第六题}
+$$a=\sum_{k=0}^{\infty} \frac{\cos n z}{n !} $$
+$$b=\sum_{k=0}^{\infty} \frac{\sin n z}{n !} $$
+考虑做一对替换有：
+$$
+    c_+\equiv a+bi=\sum_{k=0}^{\infty}{\frac{\cos nz+i\sin nz}{n!}}=\sum_{k=0}^{\infty}{\frac{\exp \left( inz \right)}{n!}}=\exp \left( \exp \left( iz \right) \right)
+$$
+$$
+    c_-\equiv a-bi=\sum_{k=0}^{\infty}{\frac{\cos nz-i\sin nz}{n!}}=\sum_{k=0}^{\infty}{\frac{\exp \left( -inz \right)}{n!}}=\exp \left( \exp \left( -iz \right) \right)
+$$
+其中
+$$
+    \exp \left( \exp \left( iz \right) \right) =\exp \left( \cos z+i\sin z \right) =e^{\cos z}\left( \cos\sin z+\sin\sin z \right)
+$$
+$$
+    \exp \left( \exp \left( -iz \right) \right) =\exp \left( \cos z-i\sin z \right) =e^{\cos z}\left( \cos\sin z-\sin\sin z \right)
+$$
+于是由替换的关系可以得到：
+$$
+    a=\frac{c_++c_-}{2}=e^{\cos z}\cos\sin z
+$$
+$$
+    b=\frac{c_+-c_-}{2i}=-ie^{\cos z}\sin\sin z
+$$
+
+\section{第七题}
+求
+$$
+    f\left( z \right) =\frac{1}{e^z-1}
+$$
+在$z=0$的洛朗级数，很明显此处不解析，考察$n\in N^*$时，
+$$
+    \underset{z\rightarrow 0}{\lim}\frac{z^n}{e^z-1}=\left\{ \begin{array}{l}
+        \begin{matrix}
+            1 & n=1 \\
+        \end{matrix} \\
+        \begin{matrix}
+            0 & n>1 \\
+        \end{matrix} \\
+    \end{array} \right.
+$$
+因此这是一阶极点，
+考虑求解析函数$a(z)=zf(z)$在$z=0$的泰勒展开，设其为
+$$
+    a\left( z \right) =\sum_{n=0}^{+\infty}{a_nz^n}
+$$
+这不容易计算，考虑其倒数$b(z)=1/a$，可以展开为
+$$
+    b\left( z \right) =\sum_{n=0}^{+\infty}{\frac{z^n}{\left( n+1 \right) !}}
+$$
+又因为恒等关系$a(z)b(z)=1$
+$$
+    \left( \sum_{n=0}^{+\infty}{a_nz^n} \right) \cdot \left( \sum_{n=0}^{+\infty}{\frac{z^n}{\left( n+1 \right) !}} \right) =1
+$$
+比较$z$的各阶系数可以得到$a_0=1,a_{1}=-\frac{1}{2}$...
+
+在$n\geq 1$时，其满足线性齐次方程组方程为：
+$$
+    \sum_{k=0}^n{\frac{a_k}{\left( n-k+1 \right) !}}=0
+$$
+理论上可以解出任意的$a_n$
+
+我试图找到通项公式但是失败了，查阅资料发现这个数列与伯努利数相关，关系为$a_n=B_n/n!$其被定义为
+$$\frac{z}{e^{z}-1}=\sum_{n=0}^{\infty} B_{n} \frac{z^{n}}{n !}$$
+递推关系为
+$$B_{m}=[m=0]-\sum_{k=0}^{m-1}\left(\begin{array}{c}
+            m \\
+            k
+        \end{array}\right) \frac{B_{k}}{m-k+1}$$
+$B_0=1$,其中 $[m=0]$ 表示当 $m=0$ 时，取1，其余取0。
+
+综上可得，
+$$
+    f\left( z \right) =\sum_{n=-1}^{+\infty}{\frac{z^n}{\left( n+1 \right) !}B_{n+1}}
+$$
+
+\section{第八题}
+由于所有极点都在围道内部，直接考察无穷远的留数，根据引理有：
+$$
+    \int_{|z|=200}{f\left( z \right) dz}=-2\pi i\underset{z\rightarrow \infty}{\text{Re}s}f\left( z \right) =2\pi i\underset{t\rightarrow 0}{\text{Re}s}\left[ f\left( \frac{1}{t} \right) \frac{1}{t^2} \right]
+$$
+其中
+$$
+    f\left( \frac{1}{t} \right) \frac{1}{t^2}=\frac{1}{t^2}\prod_{k=1}^{100}{\frac{1}{1-kt}}
+$$
+$$
+    \because \underset{t\rightarrow 0}{\lim}t^2\frac{1}{t^2}\prod_{k=1}^{100}{\frac{1}{1-kt}}=1
+$$
+$$
+    \therefore \text{二阶极点}
+$$
+所以可以计算出留数的值
+$$
+    \begin{aligned}
+        \underset{t\rightarrow 0}{\text{Re}s}\left[ f\left( \frac{1}{t} \right) \frac{1}{t^2} \right]
+         & =\underset{t\rightarrow 0}{\lim}\frac{d}{dt}\prod_{k=1}^{100}{\frac{1}{1-kt}}                      \\
+         & =\underset{t\rightarrow 0}{\lim}\sum_{n=1}^{100}{\ \prod_{n=1 \land k\ne n}^{100}{\frac{n}{1-kt}}} \\
+         & =\sum_{n=1}^{100}{n}=5050
+    \end{aligned}
+$$
+$$
+    \therefore \int_{|z|=200}{f\left( z \right) dz}=10100\pi i
+$$
+
+\section{第九题}
+\section{第十题}
+直接考察积分，试图利用柯西公式
+$$
+    \begin{aligned}
+        D_F\left( x-y \right)
+         & =\int_{C_F}{\frac{d^4p}{\left( 2\pi \right) ^4}
+        \frac{ie^{-ip\cdot \left( x-y \right)}}{p^2-m^2}}                                                 \\
+         & =\int_{C_F}{\frac{d^3\vec{p}dp_0}{\left( 2\pi \right) ^4}
+        \frac{ie^{-ip\cdot \left( x-y \right)}}{p_0^2-\left( \vec{p}^2+m^2 \right)}}                      \\
+         & =\int{\frac{d^3\vec{p}\left[ e^{-ip\cdot \left( x-y \right)} \right]}{\left( 2\pi \right) ^4}}
+        \int_{C_F}{\frac{idp_0}{p_{0}^{2}-E_{\vec{p}}^{2}}}                                               \\
+    \end{aligned}
+$$
+考察其中的
+$$
+    \int_{C_F}{\frac{idp_0}{p_{0}^{2}-E_{\vec{p}}^{2}}}=\int_{C_F}{\frac{idp_0}{\left( p_{0}-E_{\vec{p}} \right) \left( p_{0}+E_{\vec{p}} \right)}}
+$$
+注意到在$C_F$的围道内只有一个一阶极点为
+$$
+    \underset{p_0\rightarrow E_{\vec{p}}}{\text{Re}s}\frac{i}{\left( p_{0}-E_{\vec{p}} \right) \left( p_{0}+E_{\vec{p}} \right)}=\frac{i}{2E_{\vec{p}}}
+$$
+注意到$C_F$的围道方向为顺时针，因此有
+$$
+    \int_{C_F}{\frac{idp_0}{p_{0}^{2}-E_{\vec{p}}^{2}}}=2\pi \frac{1}{2E_{\vec{p}}}
+$$
+代入 Feynman 传播子表示可得到：
+$$
+    D_F\left( x-y \right) =\int_{C_F}{\frac{d^4p}{\left( 2\pi \right) ^4}\frac{ie^{-ip\cdot \left( x-y \right)}}{p^2-m^2}}=\left. \int{\frac{d^3\vec{p}}{\left( 2\pi \right) ^32E_{\vec{p}}}e^{-ip\cdot \left( x-y \right)}} \right|_{p_0=E_{\vec{p}}}
+$$
+\section{第十一题}
+$$
+    S=\int{d}^2x\left\{ -\frac{1}{2}\partial _{\mu}\phi \left( x \right) \partial ^{\mu}\phi \left( x \right) +\frac{1}{2}\lambda _{\mu v}\left( x \right) \left[ \partial ^{\mu}\phi \left( x \right) -\epsilon ^{\mu \sigma}\partial _{\sigma}\phi \left( x \right) \right] \left[ \partial ^v\phi \left( x \right) -\epsilon ^{v\rho}\partial _{\rho}\phi \left( x \right) \right] \right\}
+$$
+先分别计算其中的积分
+$$
+    S_1=\int{d}^2x\left[ \partial _{\mu}\phi \left( x \right) \partial ^{\mu}\phi \left( x \right) \right]
+$$
+$$
+    S_2=\int{d}^2x\left\{ \lambda _{\mu v}\left( x \right) \left[ \partial ^{\mu}\phi \left( x \right) -\epsilon ^{\mu \sigma}\partial _{\sigma}\phi \left( x \right) \right] \left[ \partial ^v\phi \left( x \right) -\epsilon ^{v\rho}\partial _{\rho}\phi \left( x \right) \right] \right\}
+$$
+$$
+    \because \phi \left( x \right) =\mathcal{F}\left( \phi \left( k \right) \right) ,\lambda _{\mu v}\left( x \right) =\mathcal{F}\left( \lambda _{\mu v}\left( k \right) \right)
+$$
+换元，令
+$$
+    g_{\mu}=-ik_{\mu}\phi \left( k \right) ,g^{\mu}=-ik^{\mu}\phi \left( k \right)
+$$
+导数定理
+$$
+    \because \mathcal{F}\left( -ik_{\mu}\phi \left( k \right) \right) =\partial _{\mu}\phi \left( x \right) ,\mathcal{F}\left( -ik^{\mu}\phi \left( k \right) \right) =\partial ^{\mu}\phi \left( x \right)
+$$
+卷积定理
+$$
+    S_1=\int{d}^2x\mathcal{F}\left( g_{\mu} \right) \mathcal{F}\left( g^{\mu} \right) =\frac{1}{2\pi}\int{d}^2x\mathcal{F}\left( g_{\mu}*g^{\mu} \right)
+$$
+$$
+    \therefore S_1=\left. \left( g_{\mu}*g^{\mu} \right) \right|_{k=0}=\int{d}^2\xi g_{\mu}\left( \xi \right) g^{\mu}\left( 0-\xi \right) =\int{d}^2k\left( -ik_{\mu} \right) \phi \left( k \right) \left( -ik^{\mu} \right) \phi \left( k \right)
+$$
+同理我们设
+$$
+    \eta ^{\mu}=ik^{\mu}\phi \left( k \right) -\epsilon ^{\mu \sigma}ik_{\sigma}\phi \left( k \right) ,\eta ^{\nu}=ik^{\nu}\phi \left( k \right) -\epsilon ^{v\rho}ik_{\rho}\phi \left( k \right)
+$$
+有
+$$
+    S_2=\int{d}^2x\mathcal{F}\left( \lambda _{\mu v}\left( k \right) \right) \mathcal{F}\left( \eta ^{\mu} \right) \mathcal{F}\left( \eta ^{\nu} \right) =\frac{1}{4\pi ^2}\int{d}^2x\mathcal{F}\left( \lambda _{\mu v}\left( k \right) *\eta ^{\mu}*\eta ^{\nu} \right)
+$$
+$$
+    S_2=\frac{1}{2\pi}\left. \lambda _{\mu v}\left( k \right) *\eta ^{\mu}*\eta ^{\nu} \right|_{k=0}=\frac{1}{2\pi}\int{d}^2\xi \int{d}^2\zeta \lambda _{\mu v}\left( \zeta +\xi \right) \eta ^{\mu}\left( 0-\xi \right) \eta ^{\nu}\left( 0-\zeta \right)
+$$
+即为
+$$
+    S_2=\frac{1}{2\pi}\int{d}^2k\int{d}^2k'\lambda _{\mu v}\left( -k-k' \right) \left[ ik^{\mu}\phi \left( k \right) -\epsilon ^{\mu \sigma}ik_{\sigma}\phi \left( k \right) \right] \left[ ik^{\nu}\phi \left( k' \right) -\epsilon ^{v\rho}ik_{\rho}\phi \left( k' \right) \right]
+$$
+
+现在我们终于可以代回到原表达式
+$$
+    \begin{aligned}
+        S_{m}
+        = & -\frac{1}{2} \int d^{2} k\left(-i k_{\mu}\right)\left(i k^{\mu}\right) \phi(k) \phi(-k)                                                                                                                                                                      \\
+          & +\frac{1}{4 \pi} \int d^{2} k d^{2} k^{\prime} \lambda_{\mu \nu}\left(-k-k^{\prime}\right)\left(i k^{\mu}-\epsilon^{\mu \sigma} i k_{\sigma}\right)\left(i k^{\prime \nu}-\epsilon^{\nu \rho} i k_{\rho}^{\prime}\right) \phi(k) \phi\left(k^{\prime}\right)
+    \end{aligned}
+$$
+
+这就是结果
+
+\section{第十二题}
+\subsection{}
+$$
+    g_1(t)=\left\{\begin{array}{cc}
+        2 t / T    & 0 \leq t<T / 2      \\
+        2(1-t / T) & T / 2 \leq t \leq T
+    \end{array}\right.
+$$
+根据周期函数
+$$
+    \mathcal{L}\left( g\left( t \right) \right) =
+    \frac{1}{1-e^{-p T}} \int_{0}^{T} e^{-p t} g(t) d t
+$$
+计算得
+$$
+    \int_0^{T/2}{\exp \left( -pt \right) \frac{2t}{T}dt=\frac{2}{T}}\left[ \frac{1}{p^2}-e^{-Tp/2}\left( \frac{T}{2p}+\frac{1}{p^2} \right) \right]
+$$
+$$
+    -\int_{T/2}^T{\exp \left( -pt \right) \frac{2t}{T}dt=\frac{2}{T}}e^{-Tp/2}\left[ \left( 1-e^{-Tp/2} \right) \left( \frac{T}{2p}+\frac{1}{p^2} \right) \right]
+$$
+$$
+    \int_{T/2}^T{2\exp \left( -pt \right) dt=\frac{2}{p}}\left( e^{-Tp/2}-e^{-Tp} \right)
+$$
+代入化简得
+$$
+    \mathcal{L}\left( g_1\left( t \right) \right) =\frac{2}{Tp^2}\tan\text{h}\left( \frac{Tp}{4} \right)
+$$
+\subsection{}
+$$
+    g_2\left( t \right) =\frac{2}{T}\left[ \text{tH}\left( \text{t} \right) +2\sum_{n=1}^{\infty}{\left( -1 \right)}^n\left( t-\frac{1}{2}nT \right) H\left( t-\frac{1}{2}nT \right) \right]
+$$
+$$
+    \mathcal{L}\left( g_2\left( t \right) \right) =\frac{2}{Tp^2}\left[ 1+2\sum_{n=1}^{\infty}{\left( -1 \right)}^n\exp \left( -\frac{1}{2}nT \right) \right]
+$$
+如果$g_1(t)=g_2(t)$，比照系数令$x=Tp/4$换元有
+$$
+    \tanh x=1+2 \sum_{n=0}^{\infty}(-1)^{n} e^{-2 n x}
+$$
+这正是我们想证明的。因此只需证明$g_1(t)=g_2(t)$.
+
+下面证明$g_1(t)=g_2(t)$
+
+我们首先考察区间$[0,T/2)$,对于$t\in [0,T/2]$由于全部的$H(t-1/2nT)=0$因此二者显然相等。
+
+然后考察区间$[T/2,T)$,对于$t\in [0,T/2]$求和只保留到$n=1$，有
+$$
+    g_2=\frac{2}{T}\left[ t-2\left( t-\frac{1}{2}T \right) \right] =2-\frac{2t}{T}=g_1
+$$
+
+综上二者在$t\in [0,T)$上相等。
+
+一般地，对于$n>0$情形，仅当$t\geq 1/2nT$时,$H(t-1/2nT)=1$，其余情况为0。如果我们只考察$t$非负半轴情况，求和可以写成：
+$$
+    g_2\left( t \right) =\frac{2}{T}\left[ t +2\sum_{n=1}^{\left[ \frac{2t}{T} \right]}{\left( -1 \right)}^n\left( t-\frac{1}{2}nT \right) \right]
+$$
+其中$\left[ \frac{2t}{T} \right]$表示括号内值向下取整。
+
+接下来证明$g_2(t)$也以$T$为周期，既$g_2(t)=g_2(t+T)$
+$$
+    \begin{aligned}
+        g_2\left( t+T \right)
+         & =\frac{2}{T}\left[ \text{t}+T+2\sum_{n=1}^{\left[ \frac{2t}{T}+2 \right]}{\left( -1 \right)}^n\left( t-\frac{1}{2}nT+T \right) \right]                         \\
+         & =\frac{2}{T}\left[ \text{t}+T-\left( 2t+T \right) +2t+2\sum_{n=3}^{\left[ \frac{2t}{T}+2 \right]}{\left( -1 \right)}^n\left( t-\frac{1}{2}nT+T \right) \right] \\
+         & =\frac{2}{T}\left[ t+2\sum_{n=1}^{\left[ \frac{2t}{T} \right]}{\left( -1 \right)}^n\left( t-\frac{1}{2}nT \right) \right]                                      \\
+         & =g_2\left( t \right)
+    \end{aligned}
+$$
+
+由于在$[0,T)$区间相等并都具有以$T$为周期的周期性，因此$g_1(t)=g_2(t)$，这正是我们需要的。
+于是
+$$
+    \tanh x=1+2 \sum_{n=0}^{\infty}(-1)^{n} e^{-2 n x}
+$$
+得证
+
+
+\section{第十三题}
+\section{第十四题}
+\end{document}
