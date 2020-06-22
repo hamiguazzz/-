@@ -5,6 +5,9 @@
 \makeatother
 \setlength{\parindent}{0em}
 
+\usepackage{amsthm}
+\newtheorem{yinli}[subsection]{引理}
+
 \usepackage{amsmath,amsfonts,amssymb}
 
 \title{数学物理方法\quad 期末考试}
@@ -231,6 +234,74 @@ $$
     D_F\left( x-y \right) =\int_{C_F}{\frac{d^4p}{\left( 2\pi \right) ^4}\frac{ie^{-ip\cdot \left( x-y \right)}}{p^2-m^2}}=\left. \int{\frac{d^3\vec{p}}{\left( 2\pi \right) ^32E_{\vec{p}}}e^{-ip\cdot \left( x-y \right)}} \right|_{p_0=E_{\vec{p}}}
 $$
 \section{第十一题}
+以下都建立在$D=2$上
+\begin{yinli}{导数定理}\label{11dao}
+    $$
+        f\left( x \right) =\mathcal{F}\left( g\left( k \right) \right) \Rightarrow \partial _{\mu}f\left( x \right) =\mathcal{F}\left( -ik_{\mu}g\left( k \right) \right)
+    $$
+\end{yinli}
+\begin{proof}
+    $$
+        \mathcal{F}^{-1}\left( \partial _{\mu}f\left( x \right) \right) =\frac{1}{2\pi}\int{d^2x\exp \left( ik\cdot x \right)}\partial _{\mu}f\left( x \right)
+    $$
+    $$
+        =-\frac{1}{2\pi}\int{d^2x\left( ik_{\mu} \right) \exp \left( ik\cdot x \right)}f\left( x \right) =-ik_{\mu}g\left( k \right)
+    $$
+    $$
+        \therefore \partial _{\mu}f\left( x \right) =\mathcal{F}\left( -ik_{\mu}g\left( k \right) \right)
+    $$
+    同理，
+    $$
+        \partial ^{\mu}f\left( x \right) =\mathcal{F}\left( -ik^{\mu}g\left( k \right) \right)
+    $$
+
+\end{proof}
+\begin{yinli}{卷积定理}\label{11juan}
+
+    如果定义
+    $$
+        f*g\left( x \right) \equiv \int{d^2\xi f\left( \xi \right)}g\left( x-\xi \right)
+    $$
+    则有
+    $$
+        \mathcal{F}\left( f*g\left( x \right) \right) =2\pi \mathcal{F}\left( f\left( x \right) \right) \mathcal{F}\left( g\left( x \right) \right)
+    $$
+\end{yinli}
+\begin{proof}
+    $$
+        \begin{aligned}
+            \mathcal{F}\left( f*g\left( x \right) \right)
+             & =\frac{1}{2\pi}\int{d^2xe^{-ik\cdot x}}\int{d^2\xi f\left( \xi \right)}g\left( x-\xi \right)                \\
+             & =\int{d^2\xi}f\left( \xi \right) \left[ \frac{1}{2\pi}\int{d^2x}e^{-ik\cdot x}g\left( x-\xi \right) \right] \\
+             & =\mathcal{F}\left( g\left( x \right) \right) \int{d^2\xi}f\left( \xi \right) e^{-ik\cdot \xi}               \\
+             & =2\pi \mathcal{F}\left( f\left( x \right) \right) \mathcal{F}\left( g\left( x \right) \right)
+        \end{aligned}
+    $$
+推论：对于三个函数的情形，只需要依次计算，即为
+$$
+\mathcal{F}\left( f*g*h\left( x \right) \right) =4\pi ^2\mathcal{F}\left( f\left( x \right) \right) \mathcal{F}\left( g\left( x \right) \right) \mathcal{F}\left( h\left( x \right) \right) 
+$$
+
+
+\end{proof}
+\begin{yinli}\label{11delta}
+    设对于$f(x)$有$f(x)=\mathcal{F}(g(k))$则，
+    $$
+        \int{d^2x\mathcal{F}\left( g\left( k \right) \right) }=\left( 2\pi \right) ^2g\left( 0 \right)
+    $$
+\end{yinli}
+\begin{proof}
+    $$
+        \begin{aligned}
+            \int{d^2x\mathcal{F}\left( g\left( k \right) \right)}
+             & =\int{d^2x}\int{d^2k\exp \left( -ik\cdot x \right) g\left( k \right)}                                                \\
+             & =\int{d^2kg\left( k \right)}\int{d^2x\exp \left( -ik\cdot x \right)}                                                 \\
+             & =\left( 2\pi \right) ^2\int{d^2kg\left( k \right) \delta \left( -k \right) =}\left( 2\pi \right) ^2g\left( 0 \right)
+        \end{aligned}
+    $$
+
+\end{proof}
+我们考虑原始表达式
 $$
     S=\int{d}^2x\left\{ -\frac{1}{2}\partial _{\mu}\phi \left( x \right) \partial ^{\mu}\phi \left( x \right) +\frac{1}{2}\lambda _{\mu v}\left( x \right) \left[ \partial ^{\mu}\phi \left( x \right) -\epsilon ^{\mu \sigma}\partial _{\sigma}\phi \left( x \right) \right] \left[ \partial ^v\phi \left( x \right) -\epsilon ^{v\rho}\partial _{\rho}\phi \left( x \right) \right] \right\}
 $$
@@ -248,14 +319,15 @@ $$
 $$
     g_{\mu}=-ik_{\mu}\phi \left( k \right) ,g^{\mu}=-ik^{\mu}\phi \left( k \right)
 $$
-导数定理
+利用导数定理\ref{11dao}
 $$
     \because \mathcal{F}\left( -ik_{\mu}\phi \left( k \right) \right) =\partial _{\mu}\phi \left( x \right) ,\mathcal{F}\left( -ik^{\mu}\phi \left( k \right) \right) =\partial ^{\mu}\phi \left( x \right)
 $$
-卷积定理
+利用卷积定理\ref{11juan}
 $$
     S_1=\int{d}^2x\mathcal{F}\left( g_{\mu} \right) \mathcal{F}\left( g^{\mu} \right) =\frac{1}{2\pi}\int{d}^2x\mathcal{F}\left( g_{\mu}*g^{\mu} \right)
 $$
+最后利用\ref{11delta}
 $$
     \therefore S_1=\left. \left( g_{\mu}*g^{\mu} \right) \right|_{k=0}=\int{d}^2\xi g_{\mu}\left( \xi \right) g^{\mu}\left( 0-\xi \right) =\int{d}^2k\left( -ik_{\mu} \right) \phi \left( k \right) \left( -ik^{\mu} \right) \phi \left( k \right)
 $$
