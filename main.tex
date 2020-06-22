@@ -170,6 +170,36 @@ $$
 $$
 
 \section{第九题}
+考虑配对，设
+$$
+    \begin{aligned}
+        I_1      & =\int_0^{2\pi}{e}^{\cos \theta}\cos \left( n\theta -\sin \theta \right) d\theta                    \\
+        I_2      & =\int_0^{2\pi}{e}^{\cos \theta}\sin \left( n\theta -\sin \theta \right) d\theta                    \\
+        I_1+iI_2 & =\int_0^{2\pi}{\exp \left( \cos \theta -i\sin \theta \right) \exp \left( in\theta \right)}d\theta  \\
+        I_1-iI_2 & =\int_0^{2\pi}{\exp \left( \cos \theta +i\sin \theta \right) \exp \left( -in\theta \right)}d\theta
+    \end{aligned}
+$$
+对于$I_1+iI_2$设$z=e^{i\theta}$,有
+$$
+    I_1+iI_2=\int_{\left| z \right|=1}{e^{\frac{1}{z}}z^n\frac{dz}{zi}=2\pi \underset{z\rightarrow 0}{\text{Re}s}e^{\frac{1}{z}}z^{n-1}}
+$$
+包裹的奇点只在$z=0$，我们计算其在$z=0$洛朗展开为
+$$
+    e^{\frac{1}{z}}z^{n-1}=\sum_{k=-\infty}^0{\frac{e^{n+k-1}}{\left( -k \right) !}}
+$$
+为求其留数，取$z^{-1}$项要求$k=-n$所以有
+$$
+    \underset{z\rightarrow 0}{\text{Re}s}e^{\frac{1}{z}}z^{n-1}=\frac{1}{n!}
+$$
+对于$I_1-iI_2$设$z=e^{-i\theta}$,注意积分方向相反需要取出一个负号，化简有
+$$
+    I_1-iI_2=\int_{\left| z \right|=1}{e^{\frac{1}{z}}z^n\frac{dz}{zi}=}I_1+iI_2=\frac{2\pi}{n!}
+$$
+于是要求的量即为
+$$
+    I_1=\frac{2\pi}{n!}
+$$
+
 \section{第十题}
 直接考察积分，试图利用柯西公式
 $$
