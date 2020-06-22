@@ -174,26 +174,27 @@ $$
 直接考察积分，试图利用柯西公式
 $$
     \begin{aligned}
-        D_F\left( x-y \right)
-         & =\int_{C_F}{\frac{d^4p}{\left( 2\pi \right) ^4}
-        \frac{ie^{-ip\cdot \left( x-y \right)}}{p^2-m^2}}                                                 \\
-         & =\int_{C_F}{\frac{d^3\vec{p}dp_0}{\left( 2\pi \right) ^4}
-        \frac{ie^{-ip\cdot \left( x-y \right)}}{p_0^2-\left( \vec{p}^2+m^2 \right)}}                      \\
-         & =\int{\frac{d^3\vec{p}\left[ e^{-ip\cdot \left( x-y \right)} \right]}{\left( 2\pi \right) ^4}}
-        \int_{C_F}{\frac{idp_0}{p_{0}^{2}-E_{\vec{p}}^{2}}}                                               \\
+        D_F\left( x-y \right) & =\int_{C_F}{\frac{d^4p}{\left( 2\pi \right) ^4}\frac{ie^{-ip\cdot \left( x-y \right)}}{p^2-m^2}}                                                                                                  \\
+                              & =\int_{C_F}{\frac{d^3\vec{p}dp_0}{\left( 2\pi \right) ^4}\frac{ie^{i\vec{p}\cdot \left( \vec{x}-\vec{y} \right)}e^{-ip_0\left( x_0-y_0 \right)}}{p_{0}^{2}-\left( \vec{p}^2+m^2 \right)}}         \\
+                              & =\int{\frac{d^3\vec{p}\left[ e^{i\vec{p}\cdot \left( \vec{x}-\vec{y} \right)} \right]}{\left( 2\pi \right) ^4}}\int_{C_F}{\frac{ie^{-ip_0\left( x_0-y_0 \right)}dp_0}{p_{0}^{2}-E_{\vec{p}}^{2}}} \\
     \end{aligned}
 $$
 考察其中的
 $$
-    \int_{C_F}{\frac{idp_0}{p_{0}^{2}-E_{\vec{p}}^{2}}}=\int_{C_F}{\frac{idp_0}{\left( p_{0}-E_{\vec{p}} \right) \left( p_{0}+E_{\vec{p}} \right)}}
+    \int_{C_F}{\frac{ie^{-ip_0\left( x_0-y_0 \right)}dp_0}{p_{0}^{2}-E_{\vec{p}}^{2}}}=\int_{C_F}{\frac{ie^{-ip_0\left( x_0-y_0 \right)}dp_0}{\left( p_0-E_{\vec{p}} \right) \left( p_0+E_{\vec{p}} \right)}}
 $$
 注意到在$C_F$的围道内只有一个一阶极点为
 $$
-    \underset{p_0\rightarrow E_{\vec{p}}}{\text{Re}s}\frac{i}{\left( p_{0}-E_{\vec{p}} \right) \left( p_{0}+E_{\vec{p}} \right)}=\frac{i}{2E_{\vec{p}}}
+    \underset{p_0\rightarrow E_{\vec{p}}}{\text{Re}s}\frac{ie^{-ip_0\left( x_0-y_0 \right)}}{\left( p_0-E_{\vec{p}} \right) \left( p_0+E_{\vec{p}} \right)}=\frac{ie^{-ip_0\left( x_0-y_0 \right)}}{2E_{\vec{p}}}
 $$
+考察其在无穷远的性质有
+$$
+    \underset{|p_0|\rightarrow \infty}{\lim}\left| \frac{ip_0e^{-ip_0\left( x_0-y_0 \right)}}{p_{0}^{2}-E_{\vec{p}}^{2}} \right|=0
+$$
+实际上是一致收敛的\\
 注意到$C_F$的围道方向为顺时针，因此有
 $$
-    \int_{C_F}{\frac{idp_0}{p_{0}^{2}-E_{\vec{p}}^{2}}}=2\pi \frac{1}{2E_{\vec{p}}}
+    \int_{C_F}{\frac{ie^{-ip_0\left( x_0-y_0 \right)}dp_0}{p_{0}^{2}-E_{\vec{p}}^{2}}}=2\pi \frac{e^{-ip_0\left( x_0-y_0 \right)}}{2E_{\vec{p}}}
 $$
 代入 Feynman 传播子表示可得到：
 $$
