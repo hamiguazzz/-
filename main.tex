@@ -277,10 +277,10 @@ $$
              & =2\pi \mathcal{F}\left( f\left( x \right) \right) \mathcal{F}\left( g\left( x \right) \right)
         \end{aligned}
     $$
-推论：对于三个函数的情形，只需要依次计算，即为
-$$
-\mathcal{F}\left( f*g*h\left( x \right) \right) =4\pi ^2\mathcal{F}\left( f\left( x \right) \right) \mathcal{F}\left( g\left( x \right) \right) \mathcal{F}\left( h\left( x \right) \right) 
-$$
+    推论：对于三个函数的情形，只需要依次计算，即为
+    $$
+        \mathcal{F}\left( f*g*h\left( x \right) \right) =4\pi ^2\mathcal{F}\left( f\left( x \right) \right) \mathcal{F}\left( g\left( x \right) \right) \mathcal{F}\left( h\left( x \right) \right)
+    $$
 
 
 \end{proof}
@@ -435,5 +435,186 @@ $$
 
 
 \section{第十三题}
+以下的拉普拉斯方程的表达式都基于
+$$
+    \frac{1}{\sqrt{|g|}} \partial_{\mu}\left(g^{\mu v} \sqrt{|g|} \partial_{v} \psi\right)=0
+$$
+在正交曲线坐标系下为
+$$
+    \sum_{\mu =1}^3{\frac{1}{|h_1h_2h_3|}\partial _{\mu}\left( \frac{1}{h_{\mu}}\sqrt{|h_1h_2h_3|}\partial _{\mu}\psi \right)}=0
+$$
+
+\subsection{球坐标}
+$$
+    h_r=1,h_{\theta}=r,h_{\varphi}=r\sin \theta
+$$
+拉普拉斯方程为：
+\[
+    \frac{1}{r^{2}} \frac{\partial}{\partial r}\left(r^{2} \frac{\partial u}{\partial r}\right)+\frac{1}{r^{2} \sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial u}{\partial \theta}\right)+\frac{1}{r^{2} \sin ^{2} \theta} \frac{\partial^{2} u}{\partial \varphi^{2}}=0
+\]
+首先，设
+\[
+    u(r, \theta, \varphi)=R(r) \mathrm{Y}(\theta, \varphi)
+\]
+\[
+    \frac{1}{R} \frac{\mathrm{d}}{\mathrm{d} r}\left(r^{2} \frac{\mathrm{d} R}{\mathrm{d} r}\right)=-\frac{1}{\mathrm{Y} \sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial \mathrm{Y}}{\partial \theta}\right)-\frac{1}{\mathrm{Y} \sin ^{2} \theta} \frac{\partial^{2} \mathrm{Y}}{\partial \varphi^{2}}=l(l+1)
+\]
+分解为两个方程
+\[
+    \frac{d}{d r}\left(r^{2} \frac{d R}{d r}\right)-l(l+1) R \equiv 0
+\]
+\[
+    \frac{1}{\sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial Y}{\partial \theta}\right)+\frac{1}{\sin ^{2} \theta} \frac{\partial^{2} Y}{\partial \varphi^{2}}+l(l+1) Y=0
+\]
+进一步设
+\[
+    \mathrm{Y}(\theta, \varphi)=\Theta(\theta) \Phi(\varphi)
+\]
+\[
+    \frac{\sin \theta}{\Theta} \frac{\mathrm{d}}{\mathrm{d} \theta}\left(\sin \theta \frac{\mathrm{d} \Theta}{\mathrm{d} \theta}\right)+l(l+1) \sin ^{2} \theta=-\frac{1}{\Phi} \frac{\mathrm{d}^{2} \Phi}{\mathrm{d} \varphi^{2}}=\lambda
+\]
+分解为两个常微分方程：
+\[
+    \Phi^{\prime \prime}+\lambda \Phi=0
+\]
+\[
+    \sin \theta \frac{\mathrm{d}}{\mathrm{d} \theta}\left(\sin \theta \frac{\mathrm{d} \Theta}{\mathrm{d} \theta}\right)+\left[l(l+1) \sin ^{2} \theta-\lambda\right] \theta=0
+\]
+\subsection{柱坐标}
+$$
+    h_{\rho}=1,h_{\varphi}=\rho ,h_z=1
+$$
+
+柱坐标的拉普拉斯方程表示为
+\[
+    \frac{1}{\rho} \frac{\partial}{\partial \rho}\left(\rho \frac{\partial u}{\partial \rho}\right)+\frac{1}{\rho^{2}} \frac{\partial^{2} u}{\partial \varphi^{2}}+\frac{\partial^{2} u}{\partial z^{2}}=0
+\]
+设
+\[
+    u(\rho, \varphi, z)=R(\rho) \Phi(\varphi) Z(z)
+\]
+代入得到
+\[
+    \Phi^{\prime \prime}+\lambda \Phi=0
+\]
+以及
+\[
+    \frac{\rho^{2}}{R} \frac{\mathrm{d}^{2} R}{\mathrm{d} \rho^{2}}+\frac{\rho}{R} \frac{\mathrm{d} R}{\mathrm{d} \rho}+\rho^{2} \frac{Z^{\prime \prime}}{Z}=\lambda
+\]
+分离有：
+\[
+    \frac{1}{R} \frac{\mathrm{d}^{2} R}{\mathrm{d} \rho^{2}}+\frac{1}{\rho R} \frac{\mathrm{d} R}{\mathrm{d} \rho}-\frac{m^{2}}{\rho^{2}}=-\frac{Z^{\prime \prime}}{Z}=-\mu
+\]
+两个常微分方程
+\[
+    Z^{\prime \prime}-\mu Z=0
+\]
+\[
+    \frac{\mathrm{d}^{2} R}{\mathrm{d} \rho^{2}}+\frac{1}{\rho} \frac{\mathrm{d} R}{\mathrm{d} \rho}+\left(\mu-\frac{m^{2}}{\rho^{2}}\right) R=0
+\]
+\subsection{椭圆柱坐标}
+标准表示为
+$$
+x=a \xi \eta, \quad y=a \sqrt{\left(\xi^{2}-1\right)\left(1-\eta^{2}\right)}, \quad z=z
+$$
+换元，设
+$$\xi=\operatorname{ch} u, \quad \eta=\cos v$$
+有
+$$
+    h_{u}^{2}=h_{v}^{2}=a^{2}\left(\operatorname{ch}^{2} u-\cos ^{2} v\right), \quad h_{z}=1
+$$
+拉普拉斯方程表示为
+$$
+    \nabla^{2} \Phi=\frac{1}{a^{2}\left(\operatorname{ch}^{2} u-\cos ^{2} v\right)}\left\{\frac{\partial^{2} \Phi}{\partial u^{2}}+\frac{\partial^{2} \Phi}{\partial v^{2}}\right\}+\frac{\partial^{2} \Phi}{\partial z^{2}}=0
+$$
+设
+$$
+\Phi \left( u,v,z \right) =U\left( u \right) V\left( v \right) Z\left( z \right) 
+$$
+代入有
+$$
+\frac{1}{a^2\left( \operatorname{ch}^2u-\cos ^2v \right)}\left\{ \frac{1}{U}\frac{d^2U}{du^2}+\frac{1}{V}\frac{d^2V}{dv^2} \right\} +\frac{1}{Z}\frac{d^2Z}{dz^2}=0
+$$
+分离出
+$$
+\frac{d^2Z}{dz^2}+\lambda Z=0
+$$
+另有
+$$
+\frac{1}{U}\frac{d^2U}{du^2}+\frac{1}{V}\frac{d^2V}{dv^2}-\lambda a^2\left( \operatorname{ch}^2u-\cos ^2v \right) =0
+$$
+分离出
+$$
+\frac{d^2U}{du^2}-\left( \lambda a^2ch^2u+\mu \right) U=0
+$$
+$$
+\frac{d^2V}{dv^2}+\left( \lambda a^2\cos ^2v+\mu \right) V=0
+$$
+
+\subsection{椭球坐标}
+\[
+    x^{2}=\frac{\left(a^{2}+\lambda\right)\left(a^{2}+\mu\right)\left(a^{2}+v\right)}{\left(a^{2}-b^{2}\right)\left(a^{2}-c^{2}\right)}     
+\]
+\[
+    y^{2}=\frac{\left(b^{2}+\lambda\right)\left(b^{2}+\mu\right)\left(b^{2}+v\right)}{\left(b^{2}-c^{2}\right)\left(b^{2}-a^{2}\right)}     
+\]
+\[
+    z^{2}=\frac{\left(c^{2}+\lambda\right)\left(c^{2}+\mu\right)\left(c^{2}+v\right)}{\left(c^{2}-a^{2}\right)\left(c^{2}-b^{2}\right)}
+\]
+$\lambda, \mu, \nu$ 的变化范围为
+\[
+    \lambda>-c^{2}>\mu>-b^{2}>\nu>-a^{2}     
+\]
+若设
+\[
+    \varphi(\theta)=\left(a^{2}+\theta\right)\left(b^{2}+\theta\right)\left(c^{2}+\theta\right)
+\]
+有
+\[
+    h_{\lambda}^{2}=\frac{(\lambda-\mu)(\lambda-\nu)}{4 \varphi(\lambda)}
+\]
+\[
+    h_{\mu}^{2}=\frac{(\mu-\lambda)(\mu-\nu)}{4 \varphi(\mu)}        
+\]
+\[
+    h_{\nu}^{2}=\frac{(\nu-\lambda)(\nu-\mu)}{4 \varphi(\nu)}    
+\]
+\[
+\begin{aligned}
+    \nabla^{2} \Phi
+    &=\frac{2}{(\lambda-\mu)(\lambda-\nu)(\mu-\nu)}\left[(\mu-\nu) \sqrt{\varphi(\lambda)} \frac{\partial}{\partial \lambda}\left(\sqrt{\varphi(\lambda)} \frac{\partial \Phi}{\partial \lambda}\right)\right. \\
+    &+(\lambda-\nu) \sqrt{-\varphi(\mu)} \frac{\partial}{\partial \mu}\left(\sqrt{-\varphi(\mu)} \frac{\partial \Phi}{\partial \mu}\right) \\
+    &+\left.(\lambda-\mu) \sqrt{\varphi(\nu)} \frac{\partial}{\partial \nu}\left(\sqrt{\varphi(\nu)} \frac{\partial \Phi}{\partial \nu}\right)\right]=0
+\end{aligned}
+\]
+设$\Phi=\Lambda(\lambda) M(\mu) N(\nu)$代入有
+\[
+    \begin{aligned}
+        \frac{\mu-\nu}{\Lambda} 
+        & \sqrt{\varphi(\lambda)} \frac{\mathrm{d}}{\mathrm{d} \lambda}\left(\sqrt{\varphi(\lambda)} \frac{\mathrm{d} \Lambda}{\mathrm{d} \lambda}\right)+\frac{\lambda-\nu}{M} \sqrt{-\varphi(\mu)} \frac{\mathrm{d}}{\mathrm{d} \mu}\left(\sqrt{-\varphi(\mu)} \frac{\mathrm{d} M}{\mathrm{d} \mu}\right) \\
+        &+\frac{\lambda-\mu}{N} \sqrt{\varphi(\nu)} \frac{\mathrm{d}}{\mathrm{d} \nu}\left(\sqrt{\varphi(\nu)} \frac{\mathrm{d} N}{\mathrm{d} \nu}\right)=0
+        \end{aligned}    
+\]
+注意到有恒等式
+\[
+(\mu-\nu)(K \lambda+C)+(\nu-\lambda)(K \mu+C)+(\lambda-\mu)(K \nu+C) \equiv 0
+\]
+其中 K 和C 为常数，比较系数得
+\[
+4 \sqrt{\varphi(\lambda)} \frac{\mathrm{d}}{\mathrm{d} \lambda}\left(\sqrt{\varphi(\lambda)} \frac{\mathrm{d} \Lambda}{\mathrm{d} \lambda}\right)=(K \lambda+C) \Lambda
+\]
+设$K=n(n+1)$,分离变量的三个方程为:
+$$
+4\sqrt{\varphi \left( \lambda \right)}\frac{\text{d}}{\text{d}\lambda}\left( \sqrt{\varphi \left( \lambda \right)}\frac{\text{d}\Lambda}{\text{d}\lambda} \right) =\left[ \left( n\left( n+1 \right) \right) \lambda +C \right] \Lambda 
+$$
+$$
+4\sqrt{\varphi \left( \mu \right)}\frac{\text{d}}{\text{d}\mu}\left( \sqrt{\varphi \left( \mu \right)}\frac{\text{d}M}{\text{d}\mu} \right) =\left[ \left( n\left( n+1 \right) \right) \mu +C \right] M
+$$
+$$
+4\sqrt{\varphi \left( \nu \right)}\frac{\text{d}}{\text{d}\nu}\left( \sqrt{\varphi \left( \nu \right)}\frac{\text{d}N}{\text{d}\nu} \right) =\left[ \left( n\left( n+1 \right) \right) \nu +C \right] N
+$$
+
+\subsection{锥面坐标}
+\subsection{抛物线柱坐标}
 \section{第十四题}
 \end{document}
