@@ -409,7 +409,7 @@ $$
 $$
 即为
 $$
-    S_2=\frac{1}{2\pi}\int{d}^2k\int{d}^2k'\lambda _{\mu v}\left( -k-k' \right) \left[ ik^{\mu}\phi \left( k \right) -\epsilon ^{\mu \sigma}ik_{\sigma}\phi \left( k \right) \right] \left[ ik^{\nu}\phi \left( k' \right) -\epsilon ^{v\rho}i{k'}_{\rho}\phi \left( k' \right) \right]
+    S_2=\frac{1}{2\pi}\int{d}^2k\int{d}^2k'\lambda _{\mu v}\left( -k-k' \right) \left[ ik^{\mu}\phi \left( k \right) -\epsilon ^{\mu \sigma}ik_{\sigma}\phi \left( k \right) \right] \left[ i{k'}^{\nu}\phi \left( k' \right) -\epsilon ^{v\rho}i{k'}_{\rho}\phi \left( k' \right) \right]
 $$
 
 现在我们终于可以代回到原表达式
@@ -504,7 +504,7 @@ $$
 $$
     \frac{1}{\sqrt{|g|}} \partial_{\mu}\left(g^{\mu v} \sqrt{|g|} \partial_{v} \psi\right)=0
 $$
-在正交曲线坐标系下为
+在3维正交曲线坐标系下为
 $$
     \sum_{\mu =1}^3{\frac{1}{|h_1h_2h_3|}\partial _{\mu}\left( \frac{1}{h_{\mu}}\sqrt{|h_1h_2h_3|}\partial _{\mu}\psi \right)}=0
 $$
@@ -694,7 +694,7 @@ $\lambda, \mu, \nu$ 的变化范围为
     z=\frac{r \sqrt{\lambda \mu}}{\alpha \beta}, \quad a^{2}+\beta^{2}=1
 \]
 $\lambda$ 和 $\mu$ 的变化范围为 $0 \leqslant \lambda \leqslant a^{2}, 0 \leqslant \mu \leqslant \beta^{2}$
-设$\lambda=\xi^{2}, \quad \mu=\eta^{2}$,$\xi=\alpha \operatorname{cn}(u, \alpha), \quad \eta=\beta \operatorname{cn}(v, \beta)$
+设$\lambda=\xi^{2}, \quad \mu=\eta^{2}, \quad \xi=\alpha \operatorname{cn}(u, \alpha), \quad \eta=\beta \operatorname{cn}(v, \beta)$
 其中$\operatorname{cn}$是雅可比椭圆函数
 于是
 $$\begin{array}{c}
@@ -770,4 +770,51 @@ $$
     \frac{d^2H}{d\eta ^2}-\left( \lambda a^2\eta ^2-\mu \right) H=0
 \end{equation}
 \section{第十四题}
+$$
+g^{\mu \nu}\nabla _{\mu}\nabla _v\psi =\frac{1}{\sqrt{-g}}\partial _{\mu}\left( g^{\mu \nu}\sqrt{-g}\partial _{\nu}\psi \right) =0
+$$
+注意到$g^{\mu \nu}$的对角性，代入有：
+$$
+\left[ -\frac{1}{f}\frac{\partial ^2\psi}{\partial t^2} \right] +\left[ \frac{\partial}{\partial r}\left( f\frac{\partial \psi}{\partial r} \right) +\frac{2f}{r}\frac{\partial \psi}{\partial r} \right] +\frac{1}{r^2}\left[ \frac{\partial ^2\psi}{\partial \theta ^2}+\cot \theta \frac{\partial \psi}{\partial \theta} \right] +\left[ \frac{1}{r^2\sin ^2\theta}\frac{\partial ^2\psi}{\partial \varphi ^2} \right] =0
+$$
+代入
+$$
+\psi \left( t,r,\theta ,\varphi \right) =e^{-i\omega t}Y\left( \theta ,\varphi \right) \frac{\phi \left( r \right)}{r}
+$$
+有
+$$
+\frac{r^2}{\phi}\frac{d}{dr}\left( f\frac{d\phi}{dr} \right) -r\frac{df}{dr}+\frac{\omega ^2r^2}{f}=-\frac{1}{Y\sin \theta}\frac{\partial}{\partial \theta}\left( \sin \theta \frac{\partial Y}{\partial \theta} \right) -\frac{1}{Y\sin ^2\theta}\frac{\partial ^2Y}{\partial \varphi ^2}=l\left( l+1 \right) 
+$$
+角向方程即为球函数方程：
+$$
+\frac{1}{\sin \theta}\frac{\partial}{\partial \theta}\left( \sin \theta \frac{\partial Y}{\partial \theta} \right) +\frac{1}{\sin ^2\theta}\frac{\partial ^2Y}{\partial \varphi ^2}+l\left( l+1 \right) Y=0
+$$
+径向方程为：
+$$
+f\frac{d}{dr}\left( f\frac{d}{dr}\phi \right) -\left[ \frac{f}{r}\frac{df}{dr}+\frac{fl\left( l+1 \right)}{r^2} \right] \phi =-\omega ^2\phi 
+$$
+考虑定义
+$$
+\frac{dr_*}{dr}=\frac{1}{f\left( r \right)}
+$$
+代入有
+$$
+f\frac{d}{dr}=\frac{d}{dr_*},f\left( r \right) \rightarrow F\left( r^* \right) ,\phi \left( r \right) \rightarrow \Psi \left( r^* \right) ,r=\int{F\left( r^* \right) dr}
+$$
+与定态薛定谔方程
+$$
+\hat{H}\Psi =\left( -\frac{\hbar^2}{2m}\frac{d^2}{dr^2}+U \right) \Psi =E\Psi 
+$$
+对比化简为
+$$
+-\frac{\hbar^2}{2m}\frac{d^2\Psi}{{dr^*}^2}+\frac{\hbar^2}{2m}\left[ \frac{1}{r}\frac{dF}{dr^*}+l\left( l+1 \right) \frac{F}{r^2} \right] \Psi =\frac{\hbar^2\omega ^2}{2m}\Psi 
+$$
+其中
+$$
+V_*=\frac{\hbar^2}{2m}\left[ \frac{1}{r}\frac{dF}{dr^*}+l\left( l+1 \right) \frac{F}{r^2} \right] 
+$$
+展开为
+$$
+V_*\left( r^* \right) =\frac{\hbar^2}{2m}\left\{ \frac{1}{\int{F\left( r^* \right) dr}}\frac{dF\left( r^* \right)}{dr^*}+\frac{l\left( l+1 \right) F\left( r^* \right)}{\left[ \int{F\left( r^* \right) dr} \right] ^2} \right\} 
+$$
 \end{document}
