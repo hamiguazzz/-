@@ -104,7 +104,7 @@ $$
         \end{array} \right) \qquad \beta _2=\gamma _2+i\gamma _3
 $$
 
-因此广义上（直线是特殊的圆）看，$w$将圆变成圆。特别的，对于此题的情况有：
+因此广义上（直线是特殊的圆）看，$w$将圆变成圆，对此题是将$x=a,y=b$变成圆。特别的，代入此题的系数有：
 
 $$
     \left( \begin{matrix}
@@ -128,7 +128,7 @@ $$
             -1-b & b & 0 & 1-b \\
         \end{matrix} \right)
 $$
-显然当且仅当$-a=0$,$-1-b=0$即$a=0$,$b=-1$时，退化为直线。
+显然当且仅当$-a=0$,$-1-b=0$即$a=0$,$b=-1$时，$w\bar{w}$前系数为0，退化为直线。
 \section{第六题}
 $$a=\sum_{k=0}^{\infty} \frac{\cos n z}{n !} $$
 $$b=\sum_{k=0}^{\infty} \frac{\sin n z}{n !} $$
@@ -141,17 +141,17 @@ $$
 $$
 其中
 $$
-    \exp \left( \exp \left( iz \right) \right) =\exp \left( \cos z+i\sin z \right) =e^{\cos z}\left( \cos\sin z+\sin\sin z \right)
+    \exp \left( \exp \left( iz \right) \right) =\exp \left( \cos z+i\sin z \right) =e^{\cos z}\left( \cos\sin z+i\sin\sin z \right)
 $$
 $$
-    \exp \left( \exp \left( -iz \right) \right) =\exp \left( \cos z-i\sin z \right) =e^{\cos z}\left( \cos\sin z-\sin\sin z \right)
+    \exp \left( \exp \left( -iz \right) \right) =\exp \left( \cos z-i\sin z \right) =e^{\cos z}\left( \cos\sin z-i\sin\sin z \right)
 $$
 于是由替换的关系可以得到：
 $$
     a=\frac{c_++c_-}{2}=e^{\cos z}\cos\sin z
 $$
 $$
-    b=\frac{c_+-c_-}{2i}=-ie^{\cos z}\sin\sin z
+    b=\frac{c_+-c_-}{2i}=e^{\cos z}\sin\sin z
 $$
 
 \section{第七题}
@@ -480,7 +480,7 @@ $$
 $$
 其中$\left[ \frac{2t}{T} \right]$表示括号内值向下取整。
 
-接下来证明$g_2(t)$也以$T$为周期，既$g_2(t)=g_2(t+T)$
+接下来证明$g_2(t)$也以$T$为周期，即$g_2(t)=g_2(t+T)$
 $$
     \begin{aligned}
         g_2\left( t+T \right)
@@ -573,7 +573,7 @@ $$
 \[
     \frac{1}{R} \frac{\mathrm{d}^{2} R}{\mathrm{d} \rho^{2}}+\frac{1}{\rho R} \frac{\mathrm{d} R}{\mathrm{d} \rho}-\frac{m^{2}}{\rho^{2}}=-\frac{Z^{\prime \prime}}{Z}=-\mu
 \]
-两个常微分方程
+两个常微分方程，其中$\lambda=m^2$
 \begin{equation}
     Z^{\prime \prime}-\mu Z=0
 \end{equation}
@@ -760,61 +760,61 @@ $$
     \frac{d^2Z}{dz^2}+\lambda Z=0
 \end{equation}
 $$
-    \frac{1}{\varXi}\frac{d^2\varXi}{d\xi ^2}+\frac{1}{H}\frac{d^2H}{d\eta ^2}-\lambda a^2\left( \xi ^2+\eta ^2 \right) =0
+    \frac{1}{\varXi}\frac{d^2\varXi}{d\xi ^2}+\frac{1}{H}\frac{d^2H}{d\eta ^2}-\lambda \left( \xi ^2+\eta ^2 \right) =0
 $$
 进一步有
 \begin{equation}
-    \frac{d^2\varXi}{d\xi ^2}-\left( \lambda a^2\xi ^2+\mu \right) \varXi =0
+    \frac{d^2\varXi}{d\xi ^2}-\left( \lambda \xi ^2+\mu \right) \varXi =0
 \end{equation}
 \begin{equation}
-    \frac{d^2H}{d\eta ^2}-\left( \lambda a^2\eta ^2-\mu \right) H=0
+    \frac{d^2H}{d\eta ^2}-\left( \lambda \eta ^2-\mu \right) H=0
 \end{equation}
 \section{第十四题}
 $$
-g^{\mu \nu}\nabla _{\mu}\nabla _v\psi =\frac{1}{\sqrt{-g}}\partial _{\mu}\left( g^{\mu \nu}\sqrt{-g}\partial _{\nu}\psi \right) =0
+    g^{\mu \nu}\nabla _{\mu}\nabla _v\psi =\frac{1}{\sqrt{-g}}\partial _{\mu}\left( g^{\mu \nu}\sqrt{-g}\partial _{\nu}\psi \right) =0
 $$
 注意到$g^{\mu \nu}$的对角性，代入有：
 $$
-\left[ -\frac{1}{f}\frac{\partial ^2\psi}{\partial t^2} \right] +\left[ \frac{\partial}{\partial r}\left( f\frac{\partial \psi}{\partial r} \right) +\frac{2f}{r}\frac{\partial \psi}{\partial r} \right] +\frac{1}{r^2}\left[ \frac{\partial ^2\psi}{\partial \theta ^2}+\cot \theta \frac{\partial \psi}{\partial \theta} \right] +\left[ \frac{1}{r^2\sin ^2\theta}\frac{\partial ^2\psi}{\partial \varphi ^2} \right] =0
+    \left[ -\frac{1}{f}\frac{\partial ^2\psi}{\partial t^2} \right] +\left[ \frac{\partial}{\partial r}\left( f\frac{\partial \psi}{\partial r} \right) +\frac{2f}{r}\frac{\partial \psi}{\partial r} \right] +\frac{1}{r^2}\left[ \frac{\partial ^2\psi}{\partial \theta ^2}+\cot \theta \frac{\partial \psi}{\partial \theta} \right] +\left[ \frac{1}{r^2\sin ^2\theta}\frac{\partial ^2\psi}{\partial \varphi ^2} \right] =0
 $$
 代入
 $$
-\psi \left( t,r,\theta ,\varphi \right) =e^{-i\omega t}Y\left( \theta ,\varphi \right) \frac{\phi \left( r \right)}{r}
+    \psi \left( t,r,\theta ,\varphi \right) =e^{-i\omega t}Y\left( \theta ,\varphi \right) \frac{\phi \left( r \right)}{r}
 $$
 有
 $$
-\frac{r^2}{\phi}\frac{d}{dr}\left( f\frac{d\phi}{dr} \right) -r\frac{df}{dr}+\frac{\omega ^2r^2}{f}=-\frac{1}{Y\sin \theta}\frac{\partial}{\partial \theta}\left( \sin \theta \frac{\partial Y}{\partial \theta} \right) -\frac{1}{Y\sin ^2\theta}\frac{\partial ^2Y}{\partial \varphi ^2}=l\left( l+1 \right) 
+    \frac{r^2}{\phi}\frac{d}{dr}\left( f\frac{d\phi}{dr} \right) -r\frac{df}{dr}+\frac{\omega ^2r^2}{f}=-\frac{1}{Y\sin \theta}\frac{\partial}{\partial \theta}\left( \sin \theta \frac{\partial Y}{\partial \theta} \right) -\frac{1}{Y\sin ^2\theta}\frac{\partial ^2Y}{\partial \varphi ^2}=l\left( l+1 \right)
 $$
 角向方程即为球函数方程：
 $$
-\frac{1}{\sin \theta}\frac{\partial}{\partial \theta}\left( \sin \theta \frac{\partial Y}{\partial \theta} \right) +\frac{1}{\sin ^2\theta}\frac{\partial ^2Y}{\partial \varphi ^2}+l\left( l+1 \right) Y=0
+    \frac{1}{\sin \theta}\frac{\partial}{\partial \theta}\left( \sin \theta \frac{\partial Y}{\partial \theta} \right) +\frac{1}{\sin ^2\theta}\frac{\partial ^2Y}{\partial \varphi ^2}+l\left( l+1 \right) Y=0
 $$
 径向方程为：
 $$
-f\frac{d}{dr}\left( f\frac{d}{dr}\phi \right) -\left[ \frac{f}{r}\frac{df}{dr}+\frac{fl\left( l+1 \right)}{r^2} \right] \phi =-\omega ^2\phi 
+    f\frac{d}{dr}\left( f\frac{d}{dr}\phi \right) -\left[ \frac{f}{r}\frac{df}{dr}+\frac{fl\left( l+1 \right)}{r^2} \right] \phi =-\omega ^2\phi
 $$
 考虑定义
 $$
-\frac{dr_*}{dr}=\frac{1}{f\left( r \right)}
+    \frac{dr_*}{dr}=\frac{1}{f\left( r \right)}
 $$
 代入有
 $$
-f\frac{d}{dr}=\frac{d}{dr_*},f\left( r \right) \rightarrow F\left( r^* \right) ,\phi \left( r \right) \rightarrow \Psi \left( r^* \right) ,r=\int{F\left( r^* \right) dr}
+    f\frac{d}{dr}=\frac{d}{dr_*},f\left( r \right) \rightarrow F\left( r_* \right) ,\phi \left( r \right) \rightarrow \Psi \left( r_* \right) ,r=\int{F\left( r_* \right) dr_*}
 $$
 与定态薛定谔方程
 $$
-\hat{H}\Psi =\left( -\frac{\hbar^2}{2m}\frac{d^2}{dr^2}+U \right) \Psi =E\Psi 
+    \hat{H}\Psi =\left( -\frac{\hbar^2}{2m}\frac{d^2}{dr^2}+U \right) \Psi =E\Psi
 $$
 对比化简为
 $$
--\frac{\hbar^2}{2m}\frac{d^2\Psi}{{dr^*}^2}+\frac{\hbar^2}{2m}\left[ \frac{1}{r}\frac{dF}{dr^*}+l\left( l+1 \right) \frac{F}{r^2} \right] \Psi =\frac{\hbar^2\omega ^2}{2m}\Psi 
+    -\frac{\hbar^2}{2m}\frac{d^2\Psi}{{dr_*}^2}+\frac{\hbar^2}{2m}\left[ \frac{1}{r}\frac{dF}{dr_*}+l\left( l+1 \right) \frac{F}{r^2} \right] \Psi =\frac{\hbar^2\omega ^2}{2m}\Psi
 $$
 其中
 $$
-V_*=\frac{\hbar^2}{2m}\left[ \frac{1}{r}\frac{dF}{dr^*}+l\left( l+1 \right) \frac{F}{r^2} \right] 
+    V_*=\frac{\hbar^2}{2m}\left[ \frac{1}{r}\frac{dF}{dr_*}+l\left( l+1 \right) \frac{F}{r^2} \right]
 $$
 展开为
 $$
-V_*\left( r^* \right) =\frac{\hbar^2}{2m}\left\{ \frac{1}{\int{F\left( r^* \right) dr}}\frac{dF\left( r^* \right)}{dr^*}+\frac{l\left( l+1 \right) F\left( r^* \right)}{\left[ \int{F\left( r^* \right) dr} \right] ^2} \right\} 
+    V_*\left( r_* \right) =\frac{\hbar^2}{2m}\left\{ \frac{1}{\int{F\left( r_* \right) dr_*}}\frac{dF\left( r_* \right)}{dr_*}+\frac{l\left( l+1 \right) F\left( r_* \right)}{\left[ \int{F\left( r_* \right) dr_*} \right] ^2} \right\}
 $$
 \end{document}
