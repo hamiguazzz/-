@@ -350,16 +350,16 @@ $$
 \begin{yinli}\label{11delta}
     设对于$f(x)$有$f(x)=\mathcal{F}(g(k))$则，
     $$
-        \int{d^2x\mathcal{F}\left( g\left( k \right) \right) }=\left( 2\pi \right) ^2g\left( 0 \right)
+        \int{d^2x\mathcal{F}\left( g\left( k \right) \right) }=2\pi g\left( 0 \right)
     $$
 \end{yinli}
 \begin{proof}
     $$
         \begin{aligned}
             \int{d^2x\mathcal{F}\left( g\left( k \right) \right)}
-             & =\int{d^2x}\int{d^2k\exp \left( -ik\cdot x \right) g\left( k \right)}                                                \\
-             & =\int{d^2kg\left( k \right)}\int{d^2x\exp \left( -ik\cdot x \right)}                                                 \\
-             & =\left( 2\pi \right) ^2\int{d^2kg\left( k \right) \delta \left( -k \right) =}\left( 2\pi \right) ^2g\left( 0 \right)
+             & = \frac{1}{2\pi} \int{d^2x}\int{d^2k\exp \left( -ik\cdot x \right) g\left( k \right)}                                                \\
+             & =\frac{1}{2\pi} \int{d^2kg\left( k \right)}\int{d^2x\exp \left( -ik\cdot x \right)}                                                 \\
+             & =2 \pi \int{d^2kg\left( k \right) \delta \left( -k \right) =}2 \pi g\left( 0 \right)
         \end{aligned}
     $$
 
@@ -392,7 +392,7 @@ $$
 $$
 最后利用\ref{11delta}
 $$
-    \therefore S_1=\left. \left( g_{\mu}*g^{\mu} \right) \right|_{k=0}=\int{d}^2\xi g_{\mu}\left( \xi \right) g^{\mu}\left( 0-\xi \right) =\int{d}^2k\left( -ik_{\mu} \right) \phi \left( k \right) \left( -ik^{\mu} \right) \phi \left( k \right)
+    \therefore S_1=\left. \left( g_{\mu}*g^{\mu} \right) \right|_{k=0}=\int{d}^2\xi g_{\mu}\left( \xi \right) g^{\mu}\left( 0-\xi \right) =\int{d}^2k\left( -ik_{\mu} \right) \phi \left( k \right) \left( -ik^{\mu} \right) \phi \left( -k \right)
 $$
 同理我们设
 $$
@@ -407,7 +407,7 @@ $$
 $$
 即为
 $$
-    S_2=\frac{1}{2\pi}\int{d}^2k\int{d}^2k'\lambda _{\mu v}\left( -k-k' \right) \left[ ik^{\mu}\phi \left( k \right) -\epsilon ^{\mu \sigma}ik_{\sigma}\phi \left( k \right) \right] \left[ ik^{\nu}\phi \left( k' \right) -\epsilon ^{v\rho}ik_{\rho}\phi \left( k' \right) \right]
+    S_2=\frac{1}{2\pi}\int{d}^2k\int{d}^2k'\lambda _{\mu v}\left( -k-k' \right) \left[ ik^{\mu}\phi \left( k \right) -\epsilon ^{\mu \sigma}ik_{\sigma}\phi \left( k \right) \right] \left[ ik^{\nu}\phi \left( k' \right) -\epsilon ^{v\rho}i{k'}_{\rho}\phi \left( k' \right) \right]
 $$
 
 现在我们终于可以代回到原表达式
