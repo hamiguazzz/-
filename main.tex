@@ -1,14 +1,16 @@
 \documentclass[a4paper]{ctexart}
 
+\usepackage{amsthm}
+\usepackage{amsmath,amsfonts,amssymb}
+
 \makeatletter
 \let\@afterindenttrue\@afterindentfalse
+\renewcommand\theequation{\thesubsection-\Roman{equation}}
+\@addtoreset{equation}{subsection}
 \makeatother
 \setlength{\parindent}{0em}
 
-\usepackage{amsthm}
 \newtheorem{yinli}[subsection]{引理}
-
-\usepackage{amsmath,amsfonts,amssymb}
 
 \title{数学物理方法\quad 期末考试}
 \author{周子正\quad 学号：1810334}
@@ -67,64 +69,64 @@ $$
 \section{第五题}
 平面上圆的一般方程可以写成
 $$
-\alpha _1\left( x^2+y^2 \right) +2\alpha _2x+2\alpha _3y+\alpha _4=0
+    \alpha _1\left( x^2+y^2 \right) +2\alpha _2x+2\alpha _3y+\alpha _4=0
 $$
 其中$\alpha_{1,2,3,4}\in\mathbb{R}$,若$\alpha_1=0$,其退化为直线
 
 若代入
 $$
-x=\frac{z+\bar{z}}{2},y=\frac{z-\bar{z}}{2i}
+    x=\frac{z+\bar{z}}{2},y=\frac{z-\bar{z}}{2i}
 $$
 设$\beta =\alpha _2+i\alpha _3$有复数表示
 $$
-\alpha _1z\bar{z}+\bar{\beta}z+\beta \bar{z}+\alpha _4=0
+    \alpha _1z\bar{z}+\bar{\beta}z+\beta \bar{z}+\alpha _4=0
 $$
 对于此题，
 $$
-w=\frac{z-i}{z+i}\Rightarrow z=-\frac{\left( w+1 \right) i}{w-1},\bar{z}=\frac{\left( \bar{w}+1 \right) i}{\bar{w}-1}
+    w=\frac{z-i}{z+i}\Rightarrow z=-\frac{\left( w+1 \right) i}{w-1},\bar{z}=\frac{\left( \bar{w}+1 \right) i}{\bar{w}-1}
 $$
 代入化简有
 $$
-\gamma _1w\bar{w}+\bar{\beta}_2w+\beta _2\bar{w}+\gamma _4=0
+    \gamma _1w\bar{w}+\bar{\beta}_2w+\beta _2\bar{w}+\gamma _4=0
 $$
 其中
 $$
-\left( \begin{array}{c}
-	\gamma _1\\
-	\gamma _2\\
-	\gamma _3\\
-	\gamma _4\\
-\end{array} \right) =\left( \begin{array}{c}
-	\alpha _1-2\alpha _3+\alpha _4\\
-	\alpha _1-\alpha _4\\
-	-2\alpha _2\\
-	\alpha _1+2\alpha _3+\alpha _4\\
-\end{array} \right) \qquad \beta _2=\gamma _2+i\gamma _3
+    \left( \begin{array}{c}
+            \gamma _1 \\
+            \gamma _2 \\
+            \gamma _3 \\
+            \gamma _4 \\
+        \end{array} \right) =\left( \begin{array}{c}
+            \alpha _1-2\alpha _3+\alpha _4 \\
+            \alpha _1-\alpha _4            \\
+            -2\alpha _2                    \\
+            \alpha _1+2\alpha _3+\alpha _4 \\
+        \end{array} \right) \qquad \beta _2=\gamma _2+i\gamma _3
 $$
 
 因此广义上（直线是特殊的圆）看，$w$将圆变成圆。特别的，对于此题的情况有：
 
 $$
-\left( \begin{matrix}
-	\alpha _1&		\alpha _2&		\alpha _3&		\alpha _4\\
-\end{matrix} \right) =\left( \begin{matrix}
-	0&		1/2&		0&		-a\\
-\end{matrix} \right) \rightarrow \left( \begin{matrix}
-	\gamma _1&		\gamma _2&		\gamma _3&		\gamma _4\\
-\end{matrix} \right) =\left( \begin{matrix}
-	-a&		a&		-1&		-a\\
-\end{matrix} \right) 
+    \left( \begin{matrix}
+            \alpha _1 & \alpha _2 & \alpha _3 & \alpha _4 \\
+        \end{matrix} \right) =\left( \begin{matrix}
+            0 & 1/2 & 0 & -a \\
+        \end{matrix} \right) \rightarrow \left( \begin{matrix}
+            \gamma _1 & \gamma _2 & \gamma _3 & \gamma _4 \\
+        \end{matrix} \right) =\left( \begin{matrix}
+            -a & a & -1 & -a \\
+        \end{matrix} \right)
 $$
 $$
-\left( \begin{matrix}
-	\alpha _1&		\alpha _2&		\alpha _3&		\alpha _4\\
-\end{matrix} \right) =\left( \begin{matrix}
-	0&		0&		1/2&		-b\\
-\end{matrix} \right) \rightarrow \left( \begin{matrix}
-	\gamma _1&		\gamma _2&		\gamma _3&		\gamma _4\\
-\end{matrix} \right) =\left( \begin{matrix}
-	-1-b&		b&		0&		1-b\\
-\end{matrix} \right) 
+    \left( \begin{matrix}
+            \alpha _1 & \alpha _2 & \alpha _3 & \alpha _4 \\
+        \end{matrix} \right) =\left( \begin{matrix}
+            0 & 0 & 1/2 & -b \\
+        \end{matrix} \right) \rightarrow \left( \begin{matrix}
+            \gamma _1 & \gamma _2 & \gamma _3 & \gamma _4 \\
+        \end{matrix} \right) =\left( \begin{matrix}
+            -1-b & b & 0 & 1-b \\
+        \end{matrix} \right)
 $$
 显然当且仅当$-a=0$,$-1-b=0$即$a=0$,$b=-1$时，退化为直线。
 \section{第六题}
@@ -204,7 +206,7 @@ $$
 $$
 其前几项为
 $$
-\frac{1}{e^x-1}=\frac{1}{z}-\frac{1}{2}+\frac{z}{12}-\frac{z^3}{720}+\cdots 
+    \frac{1}{e^x-1}=\frac{1}{z}-\frac{1}{2}+\frac{z}{12}-\frac{z^3}{720}+\cdots
 $$
 
 \section{第八题}
@@ -357,8 +359,8 @@ $$
     $$
         \begin{aligned}
             \int{d^2x\mathcal{F}\left( g\left( k \right) \right)}
-             & = \frac{1}{2\pi} \int{d^2x}\int{d^2k\exp \left( -ik\cdot x \right) g\left( k \right)}                                                \\
-             & =\frac{1}{2\pi} \int{d^2kg\left( k \right)}\int{d^2x\exp \left( -ik\cdot x \right)}                                                 \\
+             & = \frac{1}{2\pi} \int{d^2x}\int{d^2k\exp \left( -ik\cdot x \right) g\left( k \right)} \\
+             & =\frac{1}{2\pi} \int{d^2kg\left( k \right)}\int{d^2x\exp \left( -ik\cdot x \right)}   \\
              & =2 \pi \int{d^2kg\left( k \right) \delta \left( -k \right) =}2 \pi g\left( 0 \right)
         \end{aligned}
     $$
@@ -523,9 +525,11 @@ $$
     \frac{1}{R} \frac{\mathrm{d}}{\mathrm{d} r}\left(r^{2} \frac{\mathrm{d} R}{\mathrm{d} r}\right)=-\frac{1}{\mathrm{Y} \sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial \mathrm{Y}}{\partial \theta}\right)-\frac{1}{\mathrm{Y} \sin ^{2} \theta} \frac{\partial^{2} \mathrm{Y}}{\partial \varphi^{2}}=l(l+1)
 \]
 分解为两个方程
-\[
-    \frac{d}{d r}\left(r^{2} \frac{d R}{d r}\right)-l(l+1) R \equiv 0
-\]
+
+\begin{equation}
+    \frac{d}{d r}\left(r^{2} \frac{d R}{d r}\right)-l(l+1) R = 0
+\end{equation}
+
 \[
     \frac{1}{\sin \theta} \frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial Y}{\partial \theta}\right)+\frac{1}{\sin ^{2} \theta} \frac{\partial^{2} Y}{\partial \varphi^{2}}+l(l+1) Y=0
 \]
@@ -537,13 +541,14 @@ $$
     \frac{\sin \theta}{\Theta} \frac{\mathrm{d}}{\mathrm{d} \theta}\left(\sin \theta \frac{\mathrm{d} \Theta}{\mathrm{d} \theta}\right)+l(l+1) \sin ^{2} \theta=-\frac{1}{\Phi} \frac{\mathrm{d}^{2} \Phi}{\mathrm{d} \varphi^{2}}=\lambda
 \]
 分解为两个常微分方程：
-\[
+\begin{equation}
     \Phi^{\prime \prime}+\lambda \Phi=0
-\]
-\[
+\end{equation}
+\begin{equation}
     \sin \theta \frac{\mathrm{d}}{\mathrm{d} \theta}\left(\sin \theta \frac{\mathrm{d} \Theta}{\mathrm{d} \theta}\right)+\left[l(l+1) \sin ^{2} \theta-\lambda\right] \theta=0
-\]
+\end{equation}
 \subsection{柱坐标}
+
 $$
     h_{\rho}=1,h_{\varphi}=\rho ,h_z=1
 $$
@@ -557,9 +562,9 @@ $$
     u(\rho, \varphi, z)=R(\rho) \Phi(\varphi) Z(z)
 \]
 代入得到
-\[
+\begin{equation}
     \Phi^{\prime \prime}+\lambda \Phi=0
-\]
+\end{equation}
 以及
 \[
     \frac{\rho^{2}}{R} \frac{\mathrm{d}^{2} R}{\mathrm{d} \rho^{2}}+\frac{\rho}{R} \frac{\mathrm{d} R}{\mathrm{d} \rho}+\rho^{2} \frac{Z^{\prime \prime}}{Z}=\lambda
@@ -569,16 +574,16 @@ $$
     \frac{1}{R} \frac{\mathrm{d}^{2} R}{\mathrm{d} \rho^{2}}+\frac{1}{\rho R} \frac{\mathrm{d} R}{\mathrm{d} \rho}-\frac{m^{2}}{\rho^{2}}=-\frac{Z^{\prime \prime}}{Z}=-\mu
 \]
 两个常微分方程
-\[
+\begin{equation}
     Z^{\prime \prime}-\mu Z=0
-\]
-\[
+\end{equation}
+\begin{equation}
     \frac{\mathrm{d}^{2} R}{\mathrm{d} \rho^{2}}+\frac{1}{\rho} \frac{\mathrm{d} R}{\mathrm{d} \rho}+\left(\mu-\frac{m^{2}}{\rho^{2}}\right) R=0
-\]
+\end{equation}
 \subsection{椭圆柱坐标}
 标准表示为
 $$
-x=a \xi \eta, \quad y=a \sqrt{\left(\xi^{2}-1\right)\left(1-\eta^{2}\right)}, \quad z=z
+    x=a \xi \eta, \quad y=a \sqrt{\left(\xi^{2}-1\right)\left(1-\eta^{2}\right)}, \quad z=z
 $$
 换元，设
 $$\xi=\operatorname{ch} u, \quad \eta=\cos v$$
@@ -592,41 +597,41 @@ $$
 $$
 设
 $$
-\Phi \left( u,v,z \right) =U\left( u \right) V\left( v \right) Z\left( z \right) 
+    \Phi \left( u,v,z \right) =U\left( u \right) V\left( v \right) Z\left( z \right)
 $$
 代入有
 $$
-\frac{1}{a^2\left( \operatorname{ch}^2u-\cos ^2v \right)}\left\{ \frac{1}{U}\frac{d^2U}{du^2}+\frac{1}{V}\frac{d^2V}{dv^2} \right\} +\frac{1}{Z}\frac{d^2Z}{dz^2}=0
+    \frac{1}{a^2\left( \operatorname{ch}^2u-\cos ^2v \right)}\left\{ \frac{1}{U}\frac{d^2U}{du^2}+\frac{1}{V}\frac{d^2V}{dv^2} \right\} +\frac{1}{Z}\frac{d^2Z}{dz^2}=0
 $$
 分离出
-$$
-\frac{d^2Z}{dz^2}+\lambda Z=0
-$$
+\begin{equation}
+    \frac{d^2Z}{dz^2}+\lambda Z=0
+\end{equation}
 另有
 $$
-\frac{1}{U}\frac{d^2U}{du^2}+\frac{1}{V}\frac{d^2V}{dv^2}-\lambda a^2\left( \operatorname{ch}^2u-\cos ^2v \right) =0
+    \frac{1}{U}\frac{d^2U}{du^2}+\frac{1}{V}\frac{d^2V}{dv^2}-\lambda a^2\left( \operatorname{ch}^2u-\cos ^2v \right) = 0
 $$
 分离出
-$$
-\frac{d^2U}{du^2}-\left( \lambda a^2ch^2u+\mu \right) U=0
-$$
-$$
-\frac{d^2V}{dv^2}+\left( \lambda a^2\cos ^2v+\mu \right) V=0
-$$
+\begin{equation}
+    \frac{d^2U}{du^2}-\left( \lambda a^2ch^2u+\mu \right) U=0
+\end{equation}
+\begin{equation}
+    \frac{d^2V}{dv^2}+\left( \lambda a^2\cos ^2v+\mu \right) V=0
+\end{equation}
 
 \subsection{椭球坐标}
 \[
-    x^{2}=\frac{\left(a^{2}+\lambda\right)\left(a^{2}+\mu\right)\left(a^{2}+v\right)}{\left(a^{2}-b^{2}\right)\left(a^{2}-c^{2}\right)}     
+    x^{2}=\frac{\left(a^{2}+\lambda\right)\left(a^{2}+\mu\right)\left(a^{2}+v\right)}{\left(a^{2}-b^{2}\right)\left(a^{2}-c^{2}\right)}
 \]
 \[
-    y^{2}=\frac{\left(b^{2}+\lambda\right)\left(b^{2}+\mu\right)\left(b^{2}+v\right)}{\left(b^{2}-c^{2}\right)\left(b^{2}-a^{2}\right)}     
+    y^{2}=\frac{\left(b^{2}+\lambda\right)\left(b^{2}+\mu\right)\left(b^{2}+v\right)}{\left(b^{2}-c^{2}\right)\left(b^{2}-a^{2}\right)}
 \]
 \[
     z^{2}=\frac{\left(c^{2}+\lambda\right)\left(c^{2}+\mu\right)\left(c^{2}+v\right)}{\left(c^{2}-a^{2}\right)\left(c^{2}-b^{2}\right)}
 \]
 $\lambda, \mu, \nu$ 的变化范围为
 \[
-    \lambda>-c^{2}>\mu>-b^{2}>\nu>-a^{2}     
+    \lambda>-c^{2}>\mu>-b^{2}>\nu>-a^{2}
 \]
 若设
 \[
@@ -637,46 +642,132 @@ $\lambda, \mu, \nu$ 的变化范围为
     h_{\lambda}^{2}=\frac{(\lambda-\mu)(\lambda-\nu)}{4 \varphi(\lambda)}
 \]
 \[
-    h_{\mu}^{2}=\frac{(\mu-\lambda)(\mu-\nu)}{4 \varphi(\mu)}        
+    h_{\mu}^{2}=\frac{(\mu-\lambda)(\mu-\nu)}{4 \varphi(\mu)}
 \]
 \[
-    h_{\nu}^{2}=\frac{(\nu-\lambda)(\nu-\mu)}{4 \varphi(\nu)}    
+    h_{\nu}^{2}=\frac{(\nu-\lambda)(\nu-\mu)}{4 \varphi(\nu)}
 \]
 \[
-\begin{aligned}
-    \nabla^{2} \Phi
-    &=\frac{2}{(\lambda-\mu)(\lambda-\nu)(\mu-\nu)}\left[(\mu-\nu) \sqrt{\varphi(\lambda)} \frac{\partial}{\partial \lambda}\left(\sqrt{\varphi(\lambda)} \frac{\partial \Phi}{\partial \lambda}\right)\right. \\
-    &+(\lambda-\nu) \sqrt{-\varphi(\mu)} \frac{\partial}{\partial \mu}\left(\sqrt{-\varphi(\mu)} \frac{\partial \Phi}{\partial \mu}\right) \\
-    &+\left.(\lambda-\mu) \sqrt{\varphi(\nu)} \frac{\partial}{\partial \nu}\left(\sqrt{\varphi(\nu)} \frac{\partial \Phi}{\partial \nu}\right)\right]=0
-\end{aligned}
+    \begin{aligned}
+        \nabla^{2} \Phi
+         & =\frac{2}{(\lambda-\mu)(\lambda-\nu)(\mu-\nu)}\left[(\mu-\nu) \sqrt{\varphi(\lambda)} \frac{\partial}{\partial \lambda}\left(\sqrt{\varphi(\lambda)} \frac{\partial \Phi}{\partial \lambda}\right)\right. \\
+         & +(\lambda-\nu) \sqrt{-\varphi(\mu)} \frac{\partial}{\partial \mu}\left(\sqrt{-\varphi(\mu)} \frac{\partial \Phi}{\partial \mu}\right)                                                                     \\
+         & +\left.(\lambda-\mu) \sqrt{\varphi(\nu)} \frac{\partial}{\partial \nu}\left(\sqrt{\varphi(\nu)} \frac{\partial \Phi}{\partial \nu}\right)\right]=0
+    \end{aligned}
 \]
 设$\Phi=\Lambda(\lambda) M(\mu) N(\nu)$代入有
 \[
     \begin{aligned}
-        \frac{\mu-\nu}{\Lambda} 
-        & \sqrt{\varphi(\lambda)} \frac{\mathrm{d}}{\mathrm{d} \lambda}\left(\sqrt{\varphi(\lambda)} \frac{\mathrm{d} \Lambda}{\mathrm{d} \lambda}\right)+\frac{\lambda-\nu}{M} \sqrt{-\varphi(\mu)} \frac{\mathrm{d}}{\mathrm{d} \mu}\left(\sqrt{-\varphi(\mu)} \frac{\mathrm{d} M}{\mathrm{d} \mu}\right) \\
-        &+\frac{\lambda-\mu}{N} \sqrt{\varphi(\nu)} \frac{\mathrm{d}}{\mathrm{d} \nu}\left(\sqrt{\varphi(\nu)} \frac{\mathrm{d} N}{\mathrm{d} \nu}\right)=0
-        \end{aligned}    
+        \frac{\mu-\nu}{\Lambda}
+         & \sqrt{\varphi(\lambda)} \frac{\mathrm{d}}{\mathrm{d} \lambda}\left(\sqrt{\varphi(\lambda)} \frac{\mathrm{d} \Lambda}{\mathrm{d} \lambda}\right)+\frac{\lambda-\nu}{M} \sqrt{-\varphi(\mu)} \frac{\mathrm{d}}{\mathrm{d} \mu}\left(\sqrt{-\varphi(\mu)} \frac{\mathrm{d} M}{\mathrm{d} \mu}\right) \\
+         & +\frac{\lambda-\mu}{N} \sqrt{\varphi(\nu)} \frac{\mathrm{d}}{\mathrm{d} \nu}\left(\sqrt{\varphi(\nu)} \frac{\mathrm{d} N}{\mathrm{d} \nu}\right)=0
+    \end{aligned}
 \]
 注意到有恒等式
 \[
-(\mu-\nu)(K \lambda+C)+(\nu-\lambda)(K \mu+C)+(\lambda-\mu)(K \nu+C) \equiv 0
+    (\mu-\nu)(K \lambda+C)+(\nu-\lambda)(K \mu+C)+(\lambda-\mu)(K \nu+C) \equiv 0
 \]
 其中 K 和C 为常数，比较系数得
 \[
-4 \sqrt{\varphi(\lambda)} \frac{\mathrm{d}}{\mathrm{d} \lambda}\left(\sqrt{\varphi(\lambda)} \frac{\mathrm{d} \Lambda}{\mathrm{d} \lambda}\right)=(K \lambda+C) \Lambda
+    4 \sqrt{\varphi(\lambda)} \frac{\mathrm{d}}{\mathrm{d} \lambda}\left(\sqrt{\varphi(\lambda)} \frac{\mathrm{d} \Lambda}{\mathrm{d} \lambda}\right)=(K \lambda+C) \Lambda
 \]
 设$K=n(n+1)$,分离变量的三个方程为:
-$$
-4\sqrt{\varphi \left( \lambda \right)}\frac{\text{d}}{\text{d}\lambda}\left( \sqrt{\varphi \left( \lambda \right)}\frac{\text{d}\Lambda}{\text{d}\lambda} \right) =\left[ \left( n\left( n+1 \right) \right) \lambda +C \right] \Lambda 
-$$
-$$
-4\sqrt{\varphi \left( \mu \right)}\frac{\text{d}}{\text{d}\mu}\left( \sqrt{\varphi \left( \mu \right)}\frac{\text{d}M}{\text{d}\mu} \right) =\left[ \left( n\left( n+1 \right) \right) \mu +C \right] M
-$$
-$$
-4\sqrt{\varphi \left( \nu \right)}\frac{\text{d}}{\text{d}\nu}\left( \sqrt{\varphi \left( \nu \right)}\frac{\text{d}N}{\text{d}\nu} \right) =\left[ \left( n\left( n+1 \right) \right) \nu +C \right] N
-$$
+
+\begin{equation}
+    4\sqrt{\varphi \left( \lambda \right)}\frac{\text{d}}{\text{d}\lambda}\left( \sqrt{\varphi \left( \lambda \right)}\frac{\text{d}\Lambda}{\text{d}\lambda} \right) =\left[ \left( n\left( n+1 \right) \right) \lambda +C \right] \Lambda
+\end{equation}
+\begin{equation}
+    4\sqrt{\varphi \left( \mu \right)}\frac{\text{d}}{\text{d}\mu}\left( \sqrt{\varphi \left( \mu \right)}\frac{\text{d}M}{\text{d}\mu} \right) =\left[ \left( n\left( n+1 \right) \right) \mu +C \right] M
+\end{equation}
+\begin{equation}
+    4\sqrt{\varphi \left( \nu \right)}\frac{\text{d}}{\text{d}\nu}\left( \sqrt{\varphi \left( \nu \right)}\frac{\text{d}N}{\text{d}\nu} \right) =\left[ \left( n\left( n+1 \right) \right) \nu +C \right] N
+\end{equation}
+
 \subsection{锥面坐标}
+\[
+    x=\frac{r}{\alpha} \sqrt{\left(a^{2}-\lambda\right)\left(a^{2}+\mu\right)}
+\]
+\[
+    y=\frac{r}{\beta} \sqrt{\left(\beta^{2}+\lambda\right)\left(\beta^{2}-\mu\right)}
+\]
+\[
+    z=\frac{r \sqrt{\lambda \mu}}{\alpha \beta}, \quad a^{2}+\beta^{2}=1
+\]
+$\lambda$ 和 $\mu$ 的变化范围为 $0 \leqslant \lambda \leqslant a^{2}, 0 \leqslant \mu \leqslant \beta^{2}$
+设$\lambda=\xi^{2}, \quad \mu=\eta^{2}$,$\xi=\alpha \operatorname{cn}(u, \alpha), \quad \eta=\beta \operatorname{cn}(v, \beta)$
+其中$\operatorname{cn}$是雅可比椭圆函数
+于是
+$$\begin{array}{c}
+        x=r \mathrm{dn}(u, a) \operatorname{sn}(v, \beta), y=r \operatorname{sn}(u, \alpha) \mathrm{dn}(v, \beta),                                            \\
+        z=r \operatorname{cn}(u, a) \operatorname{cn}(v, \beta)                                                                                               \\
+        \mathrm{d} s^{2}=\mathrm{d} r^{2}+r^{2}\left(a^{2} \mathrm{cn}^{2} u+\beta^{2} \mathrm{cn}^{2} v\right)\left(\mathrm{d} u^{2}+\mathrm{d} v^{2}\right) \\
+        h_{r}=1, h_{w}^{2}=h_{v}^{2}=r^{2}\left(\alpha^{2} \mathrm{cn}^{2} u+\beta^{2} \mathrm{cn}^{2} v\right)                                               \\
+    \end{array}
+$$
+拉普拉斯方程可以写成
+$$
+    \nabla^{2} \Phi=\frac{1}{r^{2}} \frac{\partial}{\partial r}\left(r^{2} \frac{\partial \Phi}{\partial r}\right)+\frac{1}{r^{2}\left[a^{2} \mathrm{cn}^{2}(u, a)+\beta^{2} \mathrm{cn}^{2}(v, \beta)\right]}\left(\frac{\partial^{2} \Phi}{\partial u^{2}}+\frac{\partial^{2} \Phi}{\partial v^{2}}\right)=0
+$$
+设
+$$
+    \Phi \left( r,u,v \right) =R\left( r \right) U\left( u \right) V\left( v \right)
+$$
+代入有：
+$$
+    \frac{1}{Rr^4}\frac{d}{dr}\left( r^2\frac{d^2R}{dr^2} \right) +\frac{1}{\left[ a^2\text{cn}^2\left( u,a \right) +\beta ^2\text{cn}^2\left( v,\beta \right) \right]}\left( \frac{1}{U}\frac{d^2U}{du^2}+\frac{1}{V}\frac{d^2V}{dv^2} \right) =0
+$$
+分离出
+\begin{equation}
+    \frac{d^2R}{dr^2}+\frac{2}{r}\frac{dR}{dr}+\lambda r^2R=0
+\end{equation}
+$$
+    \frac{1}{U}\frac{d^2U}{du^2}+\frac{1}{V}\frac{d^2V}{dv^2}-\lambda \left[ a^2\text{cn}^2\left( u,a \right) +\beta ^2\text{cn}^2\left( v,\beta \right) \right] =0
+$$
+进一步有
+\begin{equation}
+    \frac{d^2U}{du^2}-\lambda \left[ a^2\text{cn}^2\left( u,a \right) +\mu \right] U=0
+\end{equation}
+\begin{equation}
+    \frac{d^2V}{dv^2}-\lambda \left[ \beta ^2\text{cn}^2\left( v,\beta \right) -\mu \right] V=0
+\end{equation}
 \subsection{抛物线柱坐标}
+\[
+    x=\frac{1}{2}(\lambda-\mu), \quad y=\sqrt{\lambda \mu}, \quad z=z
+\]
+令
+\[
+    \lambda=\xi^{2}, \quad \mu=\eta^{2}
+\]
+\[
+    \mathrm{d} s^{2}=\left(\xi^{2}+\eta^{2}\right)\left(\mathrm{d} \xi^{2}+\mathrm{d} \eta^{2}\right)+\mathrm{d} z^{2}
+\]
+\[
+    h_{t}^{2}=h_{\eta}^{2} =\xi^{2}+\eta^{2}, \quad h_{z}=1
+\]
+\[
+    \nabla^{2} \Phi=\frac{1}{\xi^{2}+\eta^{2}}\left\{\frac{\partial^{2} \Phi}{\partial \xi^{2}}+\frac{\partial^{2} \Phi}{\partial \eta^{2}}\right\}+\frac{\partial^{2} \Phi}{\partial z^{2}}=0
+\]
+设
+$$
+    \Phi \left( \xi ,\eta ,z \right) =\varXi \left( \xi \right) H\left( \eta \right) Z\left( z \right)
+$$
+代入有
+$$
+    \frac{1}{\xi ^2+\eta ^2}\left\{ \frac{1}{\varXi}\frac{d^2\varXi}{d\xi ^2}+\frac{1}{H}\frac{d^2H}{d\eta ^2} \right\} +\frac{1}{Z}\frac{d^2Z}{dz^2}=0
+$$
+分离出
+\begin{equation}
+    \frac{d^2Z}{dz^2}+\lambda Z=0
+\end{equation}
+$$
+    \frac{1}{\varXi}\frac{d^2\varXi}{d\xi ^2}+\frac{1}{H}\frac{d^2H}{d\eta ^2}-\lambda a^2\left( \xi ^2+\eta ^2 \right) =0
+$$
+进一步有
+\begin{equation}
+    \frac{d^2\varXi}{d\xi ^2}-\left( \lambda a^2\xi ^2+\mu \right) \varXi =0
+\end{equation}
+\begin{equation}
+    \frac{d^2H}{d\eta ^2}-\left( \lambda a^2\eta ^2-\mu \right) H=0
+\end{equation}
 \section{第十四题}
 \end{document}
