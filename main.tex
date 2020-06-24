@@ -65,9 +65,68 @@ $$
 所以只需要$n$是整数且能被$6$整除即可。
 
 \section{第五题}
-将$z=x+yi$代入$\omega$展开有：
-$$\omega=\frac{x^{2}+y^{2}-1}{x^{2}+(y+1)^{2}}-\frac{2 x}{x^{2}+(y+1)^{2}} i$$
+平面上圆的一般方程可以写成
+$$
+\alpha _1\left( x^2+y^2 \right) +2\alpha _2x+2\alpha _3y+\alpha _4=0
+$$
+其中$\alpha_{1,2,3,4}\in\mathbb{R}$,若$\alpha_1=0$,其退化为直线
 
+若代入
+$$
+x=\frac{z+\bar{z}}{2},y=\frac{z-\bar{z}}{2i}
+$$
+设$\beta =\alpha _2+i\alpha _3$有复数表示
+$$
+\alpha _1z\bar{z}+\bar{\beta}z+\beta \bar{z}+\alpha _4=0
+$$
+对于此题，
+$$
+w=\frac{z-i}{z+i}\Rightarrow z=-\frac{\left( w+1 \right) i}{w-1},\bar{z}=\frac{\left( \bar{w}+1 \right) i}{\bar{w}-1}
+$$
+代入化简有
+$$
+\gamma _1w\bar{w}+\bar{\beta}_2w+\beta _2\bar{w}+\gamma _4=0
+$$
+其中
+$$
+\left( \begin{array}{c}
+	\gamma _1\\
+	\gamma _2\\
+	\gamma _3\\
+	\gamma _4\\
+\end{array} \right) =\left( \begin{array}{c}
+	\alpha _1-2\alpha _3+\alpha _4\\
+	\alpha _1-\alpha _4\\
+	-2\alpha _2\\
+	\alpha _1+2\alpha _3+\alpha _4\\
+\end{array} \right) \qquad \beta _2=\gamma _2+i\gamma _3
+$$
+
+因此广义上（直线是特殊的圆）看，$w$将圆变成圆。特别的，对于此题的情况有：
+
+$$
+\left( \begin{matrix}
+	\alpha _1&		\alpha _2&		\alpha _3&		\alpha _4\\
+\end{matrix} \right) =\left( \begin{matrix}
+	0&		1/2&		0&		-a\\
+\end{matrix} \right) \rightarrow \left( \begin{matrix}
+	\gamma _1&		\gamma _2&		\gamma _3&		\gamma _4\\
+\end{matrix} \right) =\left( \begin{matrix}
+	-a&		a&		-1&		-a\\
+\end{matrix} \right) 
+$$
+$$
+\left( \begin{matrix}
+	\alpha _1&		\alpha _2&		\alpha _3&		\alpha _4\\
+\end{matrix} \right) =\left( \begin{matrix}
+	0&		0&		1/2&		-b\\
+\end{matrix} \right) \rightarrow \left( \begin{matrix}
+	\gamma _1&		\gamma _2&		\gamma _3&		\gamma _4\\
+\end{matrix} \right) =\left( \begin{matrix}
+	-1-b&		b&		0&		1-b\\
+\end{matrix} \right) 
+$$
+显然当且仅当$-a=0$,$-1-b=0$即$a=0$,$b=1$时，退化为直线。
 \section{第六题}
 $$a=\sum_{k=0}^{\infty} \frac{\cos n z}{n !} $$
 $$b=\sum_{k=0}^{\infty} \frac{\sin n z}{n !} $$
@@ -613,7 +672,6 @@ $$
 $$
 4\sqrt{\varphi \left( \nu \right)}\frac{\text{d}}{\text{d}\nu}\left( \sqrt{\varphi \left( \nu \right)}\frac{\text{d}N}{\text{d}\nu} \right) =\left[ \left( n\left( n+1 \right) \right) \nu +C \right] N
 $$
-
 \subsection{锥面坐标}
 \subsection{抛物线柱坐标}
 \section{第十四题}
